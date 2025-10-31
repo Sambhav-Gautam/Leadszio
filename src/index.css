@@ -1,13 +1,178 @@
+/* -------- GLOBAL STYLES -------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;800&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #F8F9FB;
+  color: #1A1A1A;
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* -------- NAVBAR -------- */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #1A1A1A;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #0056D2;
+}
+
+.navbar .brand {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0056D2;
+}
+
+/* -------- HERO SECTION -------- */
+.hero {
+  background: linear-gradient(135deg, #0056D2 60%, #003C99);
+  color: white;
+  text-align: center;
+  padding: 140px 30px;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.hero a {
+  display: inline-block;
+  background-color: #FFD700;
+  color: #1A1A1A;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: #FFC107;
+  transform: scale(1.05);
+}
+
+/* -------- SECTIONS -------- */
+section {
+  padding: 100px 60px;
+  text-align: center;
+}
+
+section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  color: #0056D2;
+  margin-bottom: 40px;
+}
+
+section p {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* -------- CARDS -------- */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  font-size: 28px;
+  color: #0056D2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 18px;
+}
+
+/* -------- FOOTER -------- */
+footer {
+  background-color: #1A1A1A;
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 18px;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  section h2 {
+    font-size: 36px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    margin: 10px 0;
+  }
+}
+/* optional helper styles */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1 0 auto;
 }

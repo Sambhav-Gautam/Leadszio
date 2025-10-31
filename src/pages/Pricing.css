@@ -1,0 +1,40 @@
+.pricing {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #F9FAFF;
+}
+
+.pricing h1 {
+  font-size: 3rem;
+  color: #4B6EF5;
+  margin-bottom: 2rem;
+}
+
+.pricing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.plan {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 2rem;
+  width: 280px;
+}
+
+.plan h2 {
+  color: #6A5ACD;
+}
+
+.plan-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #4B6EF5;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
