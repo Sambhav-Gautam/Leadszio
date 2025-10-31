@@ -1,3 +1,4 @@
+// src/pages/Home.jsx
 import Hero from "../components/Hero";
 import "./Home.css";
 
@@ -8,9 +9,18 @@ export default function Home() {
       <section className="home-section">
         <h2>What We Do</h2>
         <div className="cards">
-          <ServiceCard title="Lead Generation" text="We identify and connect you with real clients using social media intelligence." />
-          <ServiceCard title="Digital Marketing" text="Boost your brand with SEO, ads, and performance marketing." />
-          <ServiceCard title="Website Creation" text="Build modern, conversion-ready websites that attract customers." />
+          <ServiceCard
+            title="Lead Generation"
+            text="We identify and connect you with real clients using social media intelligence."
+          />
+          <ServiceCard
+            title="Digital Marketing"
+            text="Boost your brand with SEO, ads, and performance marketing."
+          />
+          <ServiceCard
+            title="Website Creation"
+            text="Build modern, conversion-ready websites that attract customers."
+          />
         </div>
       </section>
     </div>

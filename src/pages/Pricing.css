@@ -1,40 +1,99 @@
-.pricing {
+.pricing-section {
   text-align: center;
-  padding: 4rem 2rem;
-  background: #F9FAFF;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #f9fbff 0%, #eef3ff 100%);
 }
 
-.pricing h1 {
+.pricing-section h1 {
   font-size: 3rem;
-  color: #4B6EF5;
-  margin-bottom: 2rem;
+  font-weight: 800;
+  color: #1e3a8a;
 }
 
-.pricing-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.pricing-subtitle {
+  color: #475569;
+  margin-bottom: 3rem;
+  font-size: 1.15rem;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 2rem;
+  justify-content: center;
+  align-items: start;
 }
 
-.plan {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 2rem;
-  width: 280px;
+.pricing-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+  text-align: left;
+  border: 2px solid transparent;
 }
 
-.plan h2 {
-  color: #6A5ACD;
+.pricing-card.highlight {
+  background: linear-gradient(180deg, #4B6EF5 0%, #6578ff 100%);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.pricing-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.pricing-card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.pricing-card h3 span {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.pricing-card p {
+  margin-bottom: 1rem;
+  color: #475569;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.8rem;
+}
+
+.pricing-card ul li {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.pricing-card.highlight ul li {
+  color: #e0e7ff;
 }
 
 .plan-btn {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
+  text-align: center;
   background: #4B6EF5;
   color: white;
-  border-radius: 8px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pricing-card.highlight .plan-btn {
+  background: #fff;
+  color: #4B6EF5;
+}
+
+.plan-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(75, 110, 245, 0.3);
 }
