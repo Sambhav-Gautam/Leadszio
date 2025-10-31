@@ -1,6 +1,10 @@
 /* -------- GLOBAL STYLES -------- */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;800&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: #F8F9FB;
@@ -149,23 +153,144 @@ footer a {
 }
 
 /* -------- RESPONSIVE -------- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .hero {
+    padding: 100px 30px;
+  }
+
   .hero h1 {
-    font-size: 42px;
+    font-size: 52px;
+  }
+
+  section {
+    padding: 80px 30px;
   }
 
   section h2 {
-    font-size: 36px;
+    font-size: 40px;
   }
+}
 
+@media (max-width: 768px) {
   .navbar {
+    padding: 15px 20px;
     flex-direction: column;
   }
 
+  .navbar .brand {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
   .navbar a {
-    margin: 10px 0;
+    margin: 5px 10px;
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero a {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  section h2 {
+    font-size: 32px;
+  }
+
+  section p {
+    font-size: 18px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  .card h3 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 16px;
+    padding: 40px 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .navbar .brand {
+    font-size: 24px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero a {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+
+  section p {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
 /* optional helper styles */
 .app-root {
   display: flex;

@@ -8,6 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .nav-logo a {
@@ -22,6 +23,7 @@
   list-style: none;
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -33,4 +35,43 @@
 
 .nav-links a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .nav-logo a {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
 }

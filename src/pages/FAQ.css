@@ -22,3 +22,43 @@
 .faq-item h3 {
   color: #6A5ACD;
 }
+
+@media (max-width: 768px) {
+  .faq {
+    padding: 3rem 1.5rem;
+  }
+
+  .faq h1 {
+    font-size: 2.5rem;
+  }
+
+  .faq-item {
+    padding: 1.25rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq {
+    padding: 2rem 1rem;
+  }
+
+  .faq h1 {
+    font-size: 2rem;
+  }
+
+  .faq-item {
+    padding: 1rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+  }
+}
