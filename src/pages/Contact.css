@@ -1,114 +1,197 @@
+/* src/pages/Contact.css */
 .contact-page {
-  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
-  color: #1e293b;
-  padding: 6rem 2rem;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    color: #1e293b;
+    padding: 6rem 2rem;
+    text-align: center;
+    min-height: 80vh; /* Adjusted min-height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Abstract Background Layer (New) */
+.contact-abstract-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.6;
+    background: radial-gradient(circle at 10% 90%, rgba(147, 197, 253, 0.2), transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(165, 180, 252, 0.2), transparent 50%);
+    pointer-events: none;
+}
+
+.contact-header {
+    position: relative;
+    z-index: 1;
 }
 
 .contact-header h1 {
-  font-size: 3.2rem;
-  font-weight: 800;
-  color: #1e3a8a;
-  margin-bottom: 0.8rem;
+    font-size: 3.2rem;
+    font-weight: 800;
+    /* Primary brand color for headings */
+    color: #1e40af; 
+    margin-bottom: 0.8rem;
+    text-shadow: 0 4px 8px rgba(30, 64, 175, 0.1);
 }
 
 .contact-header p {
-  font-size: 1.15rem;
-  color: #475569;
-  max-width: 700px;
-  margin: 0 auto 4rem;
-  line-height: 1.6;
+    font-size: 1.1rem;
+    color: #475569;
+    max-width: 800px;
+    margin: 0 auto 4.5rem;
+    line-height: 1.6;
 }
 
 .contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
+/* Contact Card Styling (Sleek/Premium) */
 .contact-card {
-  background: white;
-  width: 300px;
-  padding: 2.5rem 1.8rem;
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
+    background: white;
+    width: 320px;
+    padding: 3rem 2rem; /* Increased padding */
+    border-radius: 16px;
+    border: 1px solid #e2e8f0; /* Subtle border */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
 }
 
+/* Card Hover Effect: High Lift and Brand Shadow */
 .contact-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(30, 64, 175, 0.2); /* Deep blue shadow */
+    border-color: #4f46e5; /* Accent border flash */
+}
+
+.contact-icon-wrapper {
+    display: inline-flex;
+    padding: 1rem;
+    border-radius: 50%;
+    background: #eff6ff; /* Light accent background */
+    margin-bottom: 1.2rem;
+    box-shadow: inset 0 0 0 1px rgba(30, 64, 175, 0.1);
 }
 
 .contact-icon {
-  color: #2563eb;
-  width: 40px;
-  height: 40px;
-  margin-bottom: 1rem;
+    /* Accent color for icons */
+    color: #4f46e5; 
+    width: 32px;
+    height: 32px;
 }
 
 .contact-card h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1e3a8a;
-  margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e40af; /* Primary brand color */
+    margin-bottom: 0.5rem;
 }
 
-.contact-card p {
-  color: #475569;
-  font-size: 1rem;
-  line-height: 1.6;
+.contact-card-text {
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .contact-card a {
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 600;
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.contact-card a:hover {
-  text-decoration: underline;
+/* Link Underline Animation */
+.contact-card a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #4f46e5;
+    transition: width 0.3s ease;
 }
 
+.contact-card a:hover::after {
+    width: 100%;
+}
+
+/* Contact Footer (High Contrast CTA Block) */
 .contact-footer {
-  text-align: center;
-  background: #1e3a8a;
-  color: white;
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  max-width: 700px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: #1e40af; /* Primary brand color background */
+    color: white;
+    padding: 3.5rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(30, 64, 175, 0.3);
+    max-width: 800px;
+    width: 100%;
 }
 
 .contact-footer h3 {
-  font-size: 1.6rem;
-  margin-bottom: 0.6rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
 }
 
 .contact-footer p {
-  font-size: 1.05rem;
-  color: #e2e8f0;
-  margin-bottom: 1.8rem;
+    font-size: 1.05rem;
+    color: #dbeafe; /* Lighter shade for contrast */
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 .contact-btn {
-  display: inline-block;
-  background: white;
-  color: #1e3a8a;
-  font-weight: 700;
-  padding: 0.9rem 1.8rem;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+    display: inline-block;
+    background: #4f46e5; /* Secondary accent color */
+    color: white;
+    font-weight: 700;
+    padding: 1rem 2.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
 }
 
 .contact-btn:hover {
-  background: #f1f5f9;
-  transform: translateY(-3px);
+    background: #3e38c7;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.6);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+    .contact-header p {
+        margin-bottom: 3rem;
+    }
+    .contact-card {
+        width: 100%; /* Full width for better mobile stacking */
+    }
+    .contact-footer {
+        padding: 3rem 1.5rem;
+    }
+    .contact-footer h3 {
+        font-size: 1.5rem;
+    }
+    .contact-btn {
+        padding: 0.8rem 1.5rem;
+    }
 }

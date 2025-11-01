@@ -1,45 +1,93 @@
-// src/pages/Pricing.jsx
+import React from "react";
 import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react"; // Using CheckCircle for features
 import "./Pricing.css";
 
-const plans = [
+// --- Pricing Data Structure (Reflecting new services) ---
+
+// 1. A La Carte Services (One-Time Fees)
+const aLaCartePlans = [
   {
-    title: "Starter",
-    price: "$99",
-    desc: "Perfect for small startups testing lead generation and initial outreach.",
+    title: "Basic Website Build",
+    price: "₹2,000",
+    desc: "A professionally designed, responsive website for simple digital presence.",
     features: [
-      "100 targeted leads/month",
-      "Basic email support",
-      "Social media profiling",
-      "Monthly growth report",
+      "Custom Frontend/Backend Design",
+      "Built on Free Hosting (e.g., Vercel, Netlify)",
+      "Standard UI/UX principles",
+      "One-time project fee",
     ],
   },
   {
-    title: "Growth",
-    price: "$299",
-    highlight: true,
-    desc: "For growing businesses ready to scale their client acquisition.",
+    title: "Advanced Website Build",
+    price: "₹10,000",
+    desc: "Complex, high-performance website with custom features and integration.",
     features: [
-      "500 targeted leads/month",
-      "Priority support",
-      "Full digital marketing suite",
-      "Weekly growth insights",
+      "Full Stack Development & Integration",
+      "Advanced API implementation",
+      "SEO-ready structure",
+      "Launch & 30-day support",
     ],
   },
   {
-    title: "Enterprise",
-    price: "$599",
-    desc: "Full-service solution with dedicated campaign management.",
+    title: "Ad Campaign Setup",
+    price: "₹2,000",
+    desc: "Creation and launch preparation for a highly optimized digital ad campaign.",
     features: [
-      "Unlimited lead access",
-      "Dedicated success manager",
-      "SEO + Ads optimization",
-      "Custom analytics dashboard",
+      "In-depth market research",
+      "Campaign strategy & targeting",
+      "Ad creative development",
+      "Platform integration (Cost of Ads excluded)",
     ],
   },
 ];
 
+// 2. Monthly Growth Subscriptions
+const monthlyPlans = [
+  {
+    title: "Growth Acceleration",
+    price: "₹5,000",
+    desc: "Focused monthly plan for brand building and consistent digital growth.",
+    highlight: true,
+    features: [
+      "SEO Optimization & Monitoring",
+      "Dedicated Social Media Management (SMM)",
+      "Landing Page Creation/Optimization",
+      "Monthly performance analytics & meeting",
+    ],
+  },
+  // We can add a simple "Maintenance" plan if desired, but here we focus on core value.
+];
+
+// 3. E-commerce Full Management
+const eCommercePlan = [
+  {
+    title: "E-commerce Elite",
+    price: "₹30,000",
+    desc: "Full-service package for physical product handling, sales, and optimization.",
+    features: [
+      "Product photography & listing on Amazon/Etsy/etc.",
+      "Inventory management & updates",
+      "Sales performance tracking",
+      "Order fulfillment processing (Excludes shipping costs)",
+    ],
+  },
+];
+
+
 export default function Pricing() {
+  const allPlans = [...aLaCartePlans, ...monthlyPlans, ...eCommercePlan];
+  const containerVariants = {
+    visible: {
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+
   return (
     <section className="pricing-section">
       <motion.h1
@@ -47,7 +95,7 @@ export default function Pricing() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Pricing Plans
+        Flexible Pricing & Growth Plans
       </motion.h1>
       <motion.p
         className="pricing-subtitle"
@@ -55,29 +103,87 @@ export default function Pricing() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Choose the perfect plan tailored to your business growth stage.
+        Select the services you need, from one-time builds to full-scale monthly partnerships.
       </motion.p>
-
-      <div className="pricing-cards">
-        {plans.map((plan, i) => (
+      
+      {/* --- A LA CARTE SERVICES --- */}
+      <h2 className="pricing-group-heading">One-Time Project Services</h2>
+      <motion.div 
+        className="pricing-cards a-la-carte"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {aLaCartePlans.map((plan, i) => (
           <motion.div
             key={i}
             className={`pricing-card ${plan.highlight ? "highlight" : ""}`}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1 }}
-            viewport={{ once: true }}
+            variants={itemVariants}
+          >
+            <h2>{plan.title}</h2>
+            <h3>{plan.price}<span> {plan.title.includes("Build") ? " (One-time)" : " (Setup)"}</span></h3>
+            <p>{plan.desc}</p>
+            <ul>
+              {plan.features.map((f, idx) => <li key={idx}><CheckCircle size={16} className="feature-icon" /> {f}</li>)}
+            </ul>
+            <a href="/contact" className="plan-btn">Inquire Now</a>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* --- MONTHLY GROWTH SERVICES --- */}
+      <h2 className="pricing-group-heading">Monthly Growth Subscriptions</h2>
+      <motion.div 
+        className="pricing-cards monthly-growth"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {monthlyPlans.map((plan, i) => (
+          <motion.div
+            key={i}
+            className={`pricing-card ${plan.highlight ? "highlight" : ""}`}
+            variants={itemVariants}
+          >
+            <div className="card-tag">{plan.highlight ? "Recommended" : ""}</div>
+            <h2>{plan.title}</h2>
+            <h3>{plan.price}<span>/month</span></h3>
+            <p>{plan.desc}</p>
+            <ul>
+              {plan.features.map((f, idx) => <li key={idx}><CheckCircle size={16} className="feature-icon" /> {f}</li>)}
+            </ul>
+            <a href="/contact" className="plan-btn">Start Growing</a>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* --- E-COMMERCE MANAGEMENT --- */}
+      <h2 className="pricing-group-heading">Full E-commerce Management</h2>
+      <motion.div 
+        className="pricing-cards full-management"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {eCommercePlan.map((plan, i) => (
+          <motion.div
+            key={i}
+            className={`pricing-card`}
+            variants={itemVariants}
           >
             <h2>{plan.title}</h2>
             <h3>{plan.price}<span>/month</span></h3>
             <p>{plan.desc}</p>
             <ul>
-              {plan.features.map((f, idx) => <li key={idx}>✅ {f}</li>)}
+              {plan.features.map((f, idx) => <li key={idx}><CheckCircle size={16} className="feature-icon" /> {f}</li>)}
             </ul>
-            <a href="/contact" className="plan-btn">Get Started</a>
+            <a href="/contact" className="plan-btn">Get Dedicated Manager</a>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,6 +1,9 @@
+/* src/components/Navbar.css */
 .navbar {
-  background: linear-gradient(90deg, #1e3a8a, #4f46e5);
-  color: white;
+  /* Retained the smooth, neutral background */
+  background: linear-gradient(90deg, #e9efff, #f3f6fb);
+  backdrop-filter: blur(8px);
+  color: #0f172a;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,36 +11,69 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+/* Soft parallax abstract shape background */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 0%, rgba(147, 197, 253, 0.25), transparent 60%),
+              radial-gradient(circle at 10% 80%, rgba(147, 197, 253, 0.18), transparent 70%);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+/* Shimmer like hero - made color less white for subtlety */
+.navbar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(147, 197, 253, 0.05), rgba(147, 197, 253, 0) 30%, rgba(147, 197, 253, 0.04) 60%);
+  animation: navbarShimmer 14s linear infinite;
+  opacity: 0.5; /* slightly increased opacity for effect */
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes navbarShimmer {
+  from { transform: translateX(-8%); }
+  to { transform: translateX(8%); }
 }
 
 .nav-logo a {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  color: #f8fafc;
+  /* IMPROVEMENT: Stronger color for better contrast */
+  color: #1e40af; /* A rich, prominent blue for the brand */
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
+  z-index: 1;
+  position: relative;
   transition: color 0.3s ease;
 }
 
 .nav-logo a:hover {
-  color: #93c5fd;
+  color: #4f46e5;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
+  z-index: 1;
+  position: relative;
 }
 
 .nav-links a {
-  color: #f1f5f9;
+  color: #0f172a;
   font-weight: 500;
   text-decoration: none;
   font-size: 1.05rem;
   position: relative;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-links a::after {
@@ -47,32 +83,53 @@
   bottom: -6px;
   width: 0%;
   height: 2px;
-  background: #93c5fd;
+  background: #4f46e5;
   transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #93c5fd;
+  color: #4f46e5;
 }
 
 .nav-links a:hover::after {
   width: 100%;
 }
 
-/* Mobile Responsive */
+/* --- Mobile Responsiveness IMPROVEMENT --- */
 @media (max-width: 768px) {
   .navbar {
+    /* Stack logo and links vertically */
     flex-direction: column;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
+    align-items: flex-start; /* Align logo to the start */
+  }
+
+  .nav-logo {
+    width: 100%;
+    text-align: center; /* Center the logo for better flow */
+    margin-bottom: 0.8rem;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.2rem;
+    /* Force single line with overflow-x and minimal gap */
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1.2rem; /* Reduced gap */
+    padding: 0 0.5rem 0.5rem; /* Padding for scrollable area */
+    overflow-x: scroll; /* Scrollable single line */
+    flex-wrap: nowrap; /* CRITICAL: Prevent wrapping */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
   }
 
-  .nav-logo a {
-    font-size: 1.8rem;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    white-space: nowrap; /* Ensure text doesn't wrap */
+    font-size: 1rem;
+    padding-bottom: 0.2rem;
   }
 }

@@ -1,99 +1,208 @@
+/* src/pages/Pricing.css */
 .pricing-section {
   text-align: center;
   padding: 6rem 2rem;
+  /* Soft, professional background */
   background: linear-gradient(180deg, #f9fbff 0%, #eef3ff 100%);
 }
 
 .pricing-section h1 {
   font-size: 3rem;
   font-weight: 800;
-  color: #1e3a8a;
+  /* Primary brand blue */
+  color: #1e40af; 
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 6px rgba(30, 64, 175, 0.08);
 }
 
 .pricing-subtitle {
   color: #475569;
   margin-bottom: 3rem;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+}
+
+/* New: Group Headings for separating tiers */
+.pricing-group-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4f46e5; /* Accent color */
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(79, 70, 229, 0.15);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pricing-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   justify-content: center;
-  align-items: start;
+  align-items: stretch; /* Ensures cards stretch to the same height */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Specific grid adjustment for A La Carte to allow three wide */
+.pricing-cards.a-la-carte {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .pricing-card {
+  position: relative;
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
   padding: 2.5rem 2rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-align: left;
-  border: 2px solid transparent;
+  border: 2px solid #e2e8f0;
 }
 
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(30, 64, 175, 0.15);
+    border-color: #e0e7ff;
+}
+
+/* Highlight Card Style */
 .pricing-card.highlight {
-  background: linear-gradient(180deg, #4B6EF5 0%, #6578ff 100%);
+  /* Vibrant accent gradient */
+  background: linear-gradient(180deg, #4f46e5 0%, #6366f1 100%);
   color: #fff;
   transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4);
+  border-color: #4f46e5;
+}
+
+/* Recommended Tag */
+.card-tag {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: #ffc107;
+    color: #1e40af;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .pricing-card h2 {
   font-size: 1.6rem;
   margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.pricing-card.highlight h2 {
+    color: #fff;
 }
 
 .pricing-card h3 {
-  font-size: 2rem;
+  font-size: 2.5rem; /* Larger price font */
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: #1e40af; /* Default price color */
+}
+
+.pricing-card.highlight h3 {
+    color: #fff;
 }
 
 .pricing-card h3 span {
   font-size: 1rem;
   color: #64748b;
+  font-weight: 500;
+}
+
+.pricing-card.highlight h3 span {
+  color: #e0e7ff;
 }
 
 .pricing-card p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #475569;
+  line-height: 1.6;
+  min-height: 50px; /* Ensures consistent card height */
+}
+
+.pricing-card.highlight p {
+  color: #dbeafe;
 }
 
 .pricing-card ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .pricing-card ul li {
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  color: #334155;
 }
 
 .pricing-card.highlight ul li {
   color: #e0e7ff;
 }
 
+/* Feature Icon Styling */
+.feature-icon {
+    color: #1e40af; /* Default icon color */
+    min-width: 16px;
+}
+
+.pricing-card.highlight .feature-icon {
+    color: #c7d2fe; /* Light icon color for highlight */
+}
+
 .plan-btn {
-  display: inline-block;
+  display: block; /* Make button full width */
   text-align: center;
-  background: #4B6EF5;
+  background: #1e40af; /* Primary brand color */
   color: white;
-  padding: 0.9rem 1.8rem;
+  padding: 1rem 1.8rem;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .pricing-card.highlight .plan-btn {
   background: #fff;
-  color: #4B6EF5;
+  color: #4f46e5;
+  box-shadow: 0 0 0 2px #fff; /* White outline */
 }
 
 .plan-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(75, 110, 245, 0.3);
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+}
+
+.pricing-card.highlight .plan-btn:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .pricing-cards.a-la-carte {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+@media (max-width: 640px) {
+    .pricing-section h1 {
+        font-size: 2.5rem;
+    }
+    .pricing-group-heading {
+        font-size: 1.6rem;
+    }
 }

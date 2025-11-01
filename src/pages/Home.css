@@ -2,17 +2,21 @@
 .home-section {
   text-align: center;
   padding: 6rem 2rem;
-  background: #f9faff;
+  background: #f9faff; /* Soft neutral background */
 }
 
 .home-section h2 {
   font-size: 2.5rem;
-  font-weight: 700;
-  color: #4B6EF5;
-  margin-bottom: 3rem;
+  font-weight: 800; /* Increased weight for presence */
+  /* Updated color matching the enhanced Navbar brand blue */
+  color: #1e40af; 
+  margin-bottom: 3.5rem;
+  text-shadow: 0 4px 6px rgba(30, 64, 175, 0.08); /* Subtle shadow for depth */
 }
 
 .cards {
+  max-width: 1100px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
@@ -20,19 +24,59 @@
 
 .service-card {
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-  padding: 2rem;
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  /* Enhanced shadow and border for premium lift */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+  padding: 2.5rem 2rem; /* Increased padding */
+  /* Smoother transition for hover effects */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  text-align: left; /* Default left alignment */
 }
 
+/* Hover Effect: Deeper shadow and a subtle border color change */
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(75,110,245,0.2);
+  transform: translateY(-8px); /* More noticeable lift */
+  /* Blue-tinted deep shadow matching the brand primary color */
+  box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15); 
+  border-color: #4f46e5;
+}
+
+/* Icon Styling */
+.card-icon-wrapper {
+  /* Soft, complementary accent circle for the icon */
+  display: inline-flex;
+  padding: 0.75rem;
+  border-radius: 50%;
+  background: #eff6ff; /* Very light blue background */
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 0 0 1px rgba(30, 64, 175, 0.1);
+}
+
+.card-icon {
+  /* Icon color matching the primary accent */
+  color: #1e40af; 
 }
 
 .service-card h3 {
-  color: #4B6EF5;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  /* Heading color to deep blue */
+  color: #1e40af; 
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.service-card p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .service-card {
+    text-align: center; /* Center cards content on small mobile screens */
+  }
+  .card-icon-wrapper {
+    margin: 0 auto 1.5rem; /* Center icon wrapper on small mobile screens */
+  }
 }
