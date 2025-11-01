@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <img src="./public/logo.png" alt="Leadszio Logo" width="100"/><br/>
+  <b>Leadszio</b>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <i>🚀 Your all-in-one B2B Lead Generation & Digital Growth Platform</i>
+</p>
 
-## Available Scripts
+<p align="center">
+  <img src="https://img.shields.io/github/license/Sambhav-Gautam/Leadszio?style=flat-square" alt="License"/>
+  <img src="https://img.shields.io/github/languages/top/Sambhav-Gautam/Leadszio?style=flat-square&color=blue" alt="Languages"/>
+  <img src="https://img.shields.io/github/last-commit/Sambhav-Gautam/Leadszio?style=flat-square&color=green" alt="Last Commit"/>
+  <img src="https://img.shields.io/badge/Deployed%20on-Netlify-blue?style=flat-square&logo=netlify" alt="Netlify"/>
+</p>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🧭 Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Leadszio** helps businesses find and connect with potential clients by automating lead generation through social platforms and creating a strong digital presence.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> 💼 From lead acquisition to website development — everything your brand needs to grow, in one place.
+---
 
-### `npm test`
+## ⚙️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Category | Technology |
+|-----------|-------------|
+| Frontend | React.js (Vite / CRA) + Tailwind CSS |
+| Backend | Node.js + Express.js |
+| Database | MongoDB (Mongoose) |
+| Deployment | Netlify (Frontend) / Render (Backend) |
+| Other | Axios, Framer Motion, React Router |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🌟 Key Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 🔍 **Smart Lead Finder** – Reach targeted prospects through online platforms  
+- 💬 **Integrated Contact System** – Easy communication channels (Email, Telegram, Discord)  
+- 💼 **B2B Marketing Tools** – End-to-end branding, website creation & campaign management  
+- 📈 **Analytics Ready** – Room for integration with Google Analytics or CRM systems  
+- 🧭 **Responsive & Animated UI** – Fully optimized for desktop and mobile  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
