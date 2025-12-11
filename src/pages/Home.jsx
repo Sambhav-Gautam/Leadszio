@@ -1,7 +1,8 @@
 import React from "react";
 // Assuming Hero component is in '../components/Hero'
 // Since this is just code export, we'll keep the import syntax for clarity
-import Hero from "../components/Hero"; 
+import Hero from "../components/Hero";
+import Testimonials from "../components/Testimonials";
 // Imports for the ServiceCard icons
 import { Zap, TrendingUp, Monitor } from "lucide-react"; 
 // Assuming './Home.css' is linked for styling
@@ -45,7 +46,14 @@ export default function Home() {
             text="Build modern, conversion-ready websites that attract customers."
           />
         </div>
+        <div className="section-cta">
+          <a href="/contact" className="cta-btn primary">
+            Schedule a Demo Call
+          </a>
+        </div>
       </section>
+
+      <Testimonials />
     </div>
   );
 }

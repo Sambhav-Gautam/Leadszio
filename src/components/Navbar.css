@@ -1,39 +1,38 @@
 /* src/components/Navbar.css */
 .navbar {
-  /* Retained the smooth, neutral background */
-  background: linear-gradient(90deg, #e9efff, #f3f6fb);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(90deg, #f8f9fb 0%, #e8eef8 100%);
+  backdrop-filter: blur(12px);
   color: #0f172a;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 1.2rem 3rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+  border-bottom: 2px solid rgba(75, 110, 245, 0.1);
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(75, 110, 245, 0.08);
 }
 
-/* Soft parallax abstract shape background */
 .navbar::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 80% 0%, rgba(147, 197, 253, 0.25), transparent 60%),
-              radial-gradient(circle at 10% 80%, rgba(147, 197, 253, 0.18), transparent 70%);
+  background: radial-gradient(circle at 80% 0%, rgba(75, 110, 245, 0.15), transparent 60%),
+              radial-gradient(circle at 10% 80%, rgba(75, 110, 245, 0.1), transparent 70%);
   z-index: 0;
-  opacity: 0.8;
+  opacity: 0.7;
+  animation: navbarGlow 8s ease-in-out infinite;
 }
 
-/* Shimmer like hero - made color less white for subtlety */
 .navbar::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(147, 197, 253, 0.05), rgba(147, 197, 253, 0) 30%, rgba(147, 197, 253, 0.04) 60%);
+  background: linear-gradient(120deg, rgba(75, 110, 245, 0.05), rgba(75, 110, 245, 0) 30%, rgba(75, 110, 245, 0.04) 60%);
   animation: navbarShimmer 14s linear infinite;
-  opacity: 0.5; /* slightly increased opacity for effect */
+  opacity: 0.6;
   pointer-events: none;
   z-index: 0;
 }
@@ -43,20 +42,28 @@
   to { transform: translateX(8%); }
 }
 
+@keyframes navbarGlow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.9; }
+}
+
 .nav-logo a {
-  font-size: 1.9rem;
+  font-family: 'Times New Roman', serif;
+  font-size: 2rem;
   font-weight: 700;
-  /* IMPROVEMENT: Stronger color for better contrast */
-  color: #1e40af; /* A rich, prominent blue for the brand */
+  color: #4b6ef5;
   text-decoration: none;
-  letter-spacing: 0.6px;
+  letter-spacing: 1px;
   z-index: 1;
   position: relative;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 8px rgba(75, 110, 245, 0.2);
 }
 
 .nav-logo a:hover {
-  color: #4f46e5;
+  color: #357ae8;
+  transform: translateY(-2px);
+  text-shadow: 0 4px 15px rgba(75, 110, 245, 0.4);
 }
 
 .nav-links {
@@ -69,29 +76,33 @@
 
 .nav-links a {
   color: #0f172a;
-  font-weight: 500;
+  font-family: 'Times New Roman', serif;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   position: relative;
   transition: all 0.3s ease;
+  letter-spacing: 0.3px;
 }
 
-.nav-links a::after {
+.nav-links a::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -8px;
   width: 0%;
-  height: 2px;
-  background: #4f46e5;
-  transition: width 0.3s ease;
+  height: 3px;
+  background: linear-gradient(90deg, #4b6ef5, #357ae8);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
 }
 
 .nav-links a:hover {
-  color: #4f46e5;
+  color: #4b6ef5;
+  transform: translateY(-2px);
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::before {
   width: 100%;
 }
 

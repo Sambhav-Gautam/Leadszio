@@ -68,10 +68,10 @@ export default function Contact() {
                     Schedule a quick 15-minute introductory call with our lead generation experts today and see how Leadszio can start driving real results for you.
                 </p>
                 <a
-                    href="#" // Placeholder for a scheduling link (e.g., Calendly)
+                    href="/contact"
                     className="contact-btn"
                 >
-                    Schedule a Discovery Call 🚀
+                    Schedule a Discovery Call
                 </a>
             </div>
         </div>
