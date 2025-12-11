@@ -9,7 +9,7 @@ import "./Pricing.css";
 const aLaCartePlans = [
   {
     title: "Basic Website Build",
-    price: "₹2,000",
+    price: "₹5,000",
     desc: "A professionally designed, responsive website for simple digital presence.",
     features: [
       "Custom Frontend/Backend Design",
@@ -20,7 +20,7 @@ const aLaCartePlans = [
   },
   {
     title: "Advanced Website Build",
-    price: "₹10,000",
+    price: "₹15,000",
     desc: "Complex, high-performance website with custom features and integration.",
     features: [
       "Full Stack Development & Integration",
@@ -31,7 +31,7 @@ const aLaCartePlans = [
   },
   {
     title: "Ad Campaign Setup",
-    price: "₹2,000",
+    price: "₹4,000 to ₹5,000",
     desc: "Creation and launch preparation for a highly optimized digital ad campaign.",
     features: [
       "In-depth market research",
@@ -46,7 +46,7 @@ const aLaCartePlans = [
 const monthlyPlans = [
   {
     title: "Growth Acceleration",
-    price: "₹5,000",
+    price: "₹5,000 - ₹8,000",
     desc: "Focused monthly plan for brand building and consistent digital growth.",
     highlight: true,
     features: [
@@ -63,7 +63,7 @@ const monthlyPlans = [
 const eCommercePlan = [
   {
     title: "E-commerce Elite",
-    price: "₹30,000",
+    price: "₹40,000 - ₹48,000",
     desc: "Full-service package for physical product handling, sales, and optimization.",
     features: [
       "Product photography & listing on Amazon/Etsy/etc.",
