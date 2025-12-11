@@ -89,6 +89,25 @@ export default function About() {
             </svg>
           </motion.div>
         </div>
+
+        <motion.div
+          className="about-cta-section"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2>Let's Build Your Success Story</h2>
+          <p>Ready to grow your business with strategic marketing and lead generation?</p>
+          <div className="about-cta-buttons">
+            <a href="/contact" className="cta-btn primary">
+              Schedule a Free Consultation
+            </a>
+            <a href="/services" className="cta-btn secondary">
+              Learn Our Services
+            </a>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );

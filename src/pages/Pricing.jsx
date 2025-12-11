@@ -76,7 +76,6 @@ const eCommercePlan = [
 
 
 export default function Pricing() {
-  const allPlans = [...aLaCartePlans, ...monthlyPlans, ...eCommercePlan];
   const containerVariants = {
     visible: {
       transition: { staggerChildren: 0.1 }

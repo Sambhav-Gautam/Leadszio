@@ -71,6 +71,50 @@ export default function FAQ() {
             q: "Can Leadszio integrate my existing systems into a new website?",
             a: "For our Advanced Website Build (₹10,000 tier), we can integrate complex features, APIs, and existing backend systems, ensuring a seamless and fully functional digital environment tailored to your operational needs.",
         },
+        {
+            q: "How long does a typical website project take?",
+            a: "Basic website projects typically take 2-3 weeks from start to finish. Advanced projects with complex integrations may take 4-6 weeks depending on scope and requirements. We maintain clear timelines and keep you updated throughout the process.",
+        },
+        {
+            q: "What kind of results can I expect from lead generation services?",
+            a: "Results vary based on your industry, target market, and current state. However, our clients typically see 30-50% improvement in lead quality within the first 3 months, with conversion rates increasing by 15-25% as we refine our outreach strategy.",
+        },
+        {
+            q: "Do you offer support after the project is completed?",
+            a: "Yes! All website projects include 30 days of free post-launch support. For ongoing needs beyond that, we offer maintenance packages ranging from ₹2,000-5,000/month depending on the level of support required.",
+        },
+        {
+            q: "Can I scale my service package as my business grows?",
+            a: "Absolutely! Many of our clients start with basic services and scale up as their business grows. We're flexible and can adjust your plan anytime to match your current needs and budget.",
+        },
+        {
+            q: "What makes Leadszio different from other digital marketing agencies?",
+            a: "We focus on results and transparency. No fluff, no long-term contracts you're stuck with. We use data-driven strategies, maintain clear communication, and provide detailed analytics so you can see exactly what's working and why.",
+        },
+        {
+            q: "How do you approach SEO compared to other agencies?",
+            a: "We don't promise overnight rankings or guaranteed #1 positions (anyone who does is lying). Instead, we focus on sustainable, white-hat SEO that builds authority over time. We optimize on-page elements, build quality links, and create content that genuinely serves your audience.",
+        },
+        {
+            q: "What if I'm not satisfied with the results?",
+            a: "Client satisfaction is our priority. If you're not happy with our work, we'll work with you to address concerns. For larger packages, we offer a 14-day review period where adjustments are made at no additional cost.",
+        },
+        {
+            q: "Do you work with startups or only established businesses?",
+            a: "We work with businesses at all stages—from ambitious startups to established companies looking to scale. Our flexible pricing and services mean we can adapt to any budget and growth stage.",
+        },
+        {
+            q: "Can you help with rebranding or redesigning an existing website?",
+            a: "Yes, we specialize in website redesigns. We'll analyze your current performance, identify what's working, and redesign with a fresh, modern approach while maintaining what drives results.",
+        },
+        {
+            q: "How do you measure success for digital marketing campaigns?",
+            a: "We establish clear KPIs before starting any campaign—whether it's traffic, leads, conversions, or ROI. We track everything with analytics and provide monthly reports showing exactly where your investment is going and what returns it's generating.",
+        },
+        {
+            q: "What's your typical contract length?",
+            a: "We're flexible! One-time projects have clear start and end dates. For monthly services, we typically ask for a 3-month commitment to show results, but there's no long-term lock-in. We believe in earning your business every month.",
+        },
     ];
 
     return (
@@ -87,6 +131,14 @@ export default function FAQ() {
                         <p>{item.a}</p>
                     </AccordionItem>
                 ))}
+            </div>
+
+            <div className="faq-cta">
+                <h2>Still Have Questions?</h2>
+                <p>Get in touch with our team and we'll help you find the perfect solution for your business</p>
+                                <a href="/contact" className="cta-btn primary">
+                                    Contact Our Team
+                                </a>
             </div>
         </div>
     );

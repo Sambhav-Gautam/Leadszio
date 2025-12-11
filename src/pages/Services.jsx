@@ -63,6 +63,25 @@ export default function Services() {
           </motion.div>
         ))}
       </div>
+
+      <motion.div
+        className="services-cta"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Choose the perfect plan and start growing today</p>
+        <div className="cta-button-group">
+          <a href="/pricing" className="cta-btn primary">
+            View Pricing Plans 💰
+          </a>
+          <a href="/contact" className="cta-btn secondary">
+            Schedule a Consultation
+          </a>
+        </div>
+      </motion.div>
     </div>
   );
 }
